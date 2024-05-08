@@ -1,0 +1,59 @@
+package String_02;
+import java.io.IOException;
+import java.util.Scanner;
+
+
+import javax.print.Doc;
+//  contains
+/*
+ *    JDBC => DBCP => MyBatis => (JPA)
+ *    Ajax => Vue => React => Redux => React-Query => Next
+ *     1차     2차     3차 =========================    4차
+ *    MSA 
+ */
+import javax.swing.*;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
+public class string_02 {
+	
+	public static void main(String[] args) throws IOException {
+		
+		// Jsoup 셀레니즘
+		Scanner scan = new Scanner(System.in);
+		System.out.print("1. 노래명 검색  2. 가수명 검색");
+		
+		int menu=scan.nextInt();
+		int k=1;
+		if(menu==1)
+		{
+			System.out.print("노래명 입력");
+			String fd = scan.next();
+			for(int i = 1 ; i <= 4 ; i++)
+			{
+				Document doc=Jsoup.connect("https://www.genie.co.kr/chart/top200?ditc=D&ymd=20240423&hh=15&rtm=Y&pg="+i).get();
+				Elements title = doc.select("table.list-wrap a.title");
+				Elements singer = doc.select("table.list-wrap a.artist");
+				for(int j=0;j<title.size();j++)
+				{
+					
+					 //포함여부 확인
+					if(title.get(j).text().contains(fd))
+					{
+					  System.out.println(k +"."+title.get(j).text()+"("+singer.get(j).text()+")"
+							  );
+					  k++;
+					}
+				}
+			}
+		}
+		else if (menu==2)
+		{
+			
+			
+		} 
+		
+	} 
+
+}
