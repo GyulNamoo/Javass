@@ -47,7 +47,6 @@ public class UserMain {
 			} else if ( menu == 3) {
 				System.out.print("번호 입력:");
 				int mno = scan.nextInt();
-				Movie mmm=mgr.movieDatailData(mno);
 				System.out.println("순위:"+mmm.getRank());
 				System.out.println("영화명:"+mmm.getTitle());
 				System.out.println("감독:" + mmm.getDirector());
@@ -62,6 +61,7 @@ public class UserMain {
 				System.out.println("없는 메뉴입니다!!");
 			}
 		} 
+		 scan.close();
 	}
 
 }

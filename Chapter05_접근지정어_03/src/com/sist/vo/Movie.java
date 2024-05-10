@@ -1,4 +1,7 @@
 package com.sist.vo;
+
+import lombok.Data;
+
 /*
  * 1|
  * 쇼생크 탈출|

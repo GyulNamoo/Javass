@@ -134,7 +134,7 @@ public class MainClass {
 		Scanner scan = new Scanner(System.in);
 		System.out.println("페이지 입력:");
 		int page = scan.nextInt();
-		Movie[] m = MovieManager
+		Movie[] m = MovieManager();
 		//1.목록
 		System.out.println("==================== 영화 목록 =====================");
 		// 메모리에 저장이 된 상태 => 컴파일시에 메모리에 저장 => Method Area
