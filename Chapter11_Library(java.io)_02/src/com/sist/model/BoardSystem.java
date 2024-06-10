@@ -234,4 +234,9 @@ public void boardGetData()
 				}
 				return max;
 			}
+
+			public Board boardUpdateData(int int1) {
+				// TODO Auto-generated method stub
+				return null;
+			}
 }
